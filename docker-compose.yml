@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  cython_binding:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        http_proxy: $http_proxy
+        https_proxy: $https_proxy
+    container_name: cython_binding_cpp
+    volumes:
+    - ./:/cython_binding_cpp
+    working_dir: /cython_binding_cpp
+    tty: true
+
